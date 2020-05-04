@@ -20,7 +20,7 @@ ctx.fillRect(370, 260, 50, 50);
 
 let paddle = new Paddle(GAME_WIDTH, GAME_HEIGHT);
 
-let ball = new Ball();
+let ball = new Ball(GAME_WIDTH, GAME_HEIGHT);
 
 new InputHandler(paddle);
 
@@ -34,6 +34,7 @@ function gameLoop(timestamp) {
   paddle.update(deltaTime);
   paddle.draw(ctx);
 
+  ball.update(deltaTime);
   ball.draw(ctx);
 
   requestAnimationFrame(gameLoop);
